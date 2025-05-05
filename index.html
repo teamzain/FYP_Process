@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Capstone Project Ontology Viewer</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --accent-color: #e74c3c;
+        --light-color: #ecf0f1;
+        --border-color: #bdc3c7;
+      }
+      
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      html, body {
+        height: 100%;
+        overflow: hidden;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--primary-color);
+      }
+      
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      
+      .top-bar {
+        background-color: var(--primary-color);
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      }
+      
+      .logo {
+        font-size: 1.4rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+      
+      .logo i {
+        margin-right: 10px;
+        font-size: 1.6rem;
+      }
+      
+      .top-bar a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        transition: color 0.2s;
+        display: flex;
+        align-items: center;
+      }
+      
+      .top-bar a:hover {
+        color: var(--secondary-color);
+      }
+      
+      .top-bar a i {
+        margin-right: 5px;
+      }
+      
+      .main-content {
+        display: flex;
+        height: calc(100% - 60px);
+      }
+      
+      .sidebar {
+        width: 350px;
+        background-color: var(--light-color);
+        padding: 20px;
+        overflow-y: auto;
+        border-right: 1px solid var(--border-color);
+      }
+      
+      .sidebar h2 {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--secondary-color);
+        color: var(--primary-color);
+        font-size: 1.3rem;
+      }
+      
+      .competency-questions {
+        margin-bottom: 25px;
+      }
+      
+      .question-category {
+        margin-bottom: 25px;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        overflow: hidden;
+      }
+      
+      .question-category h3 {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 12px 15px;
+        margin: 0;
+        font-size: 1.05rem;
+        display: flex;
+        align-items: center;
+      }
+      
+      .question-category h3 i {
+        margin-right: 8px;
+      }
+      
+      .question {
+        padding: 10px 15px;
+        border-bottom: 1px solid var(--border-color);
+      }
+      
+      .question:last-child {
+        border-bottom: none;
+      }
+      
+      .question:hover {
+        background-color: rgba(52, 152, 219, 0.05);
+      }
+      
+      .question h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+        color: var(--secondary-color);
+      }
+      
+      .question p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+      
+      .info-section {
+        margin-top: 25px;
+      }
+      
+      .info-section h3 {
+        margin-bottom: 10px;
+        color: var(--primary-color);
+        font-size: 1.1rem;
+      }
+      
+      .info-section p {
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      
+      .view-section {
+        flex: 1;
+        height: 100%;
+      }
+      
+      iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      
+      .toggle-sidebar {
+        display: none;
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+      
+      @media (max-width: 768px) {
+        .sidebar {
+          position: fixed;
+          left: -350px;
+          top: 60px;
+          height: calc(100% - 60px);
+          transition: left 0.3s ease;
+          z-index: 100;
+        }
+        
+        .sidebar.active {
+          left: 0;
+        }
+        
+        .toggle-sidebar {
+          display: block;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="top-bar">
+        <div class="logo">
+          <i class="fas fa-project-diagram"></i>
+          <span>Capstone Project Ontology</span>
+        </div>
+        <button class="toggle-sidebar" id="toggleSidebar">
+          <i class="fas fa-bars"></i> Show Menu
+        </button>
+        <a href="https://github.com/teamzain/FYP_Process" target="_blank">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </div>
+      
+      <div class="main-content">
+        <div class="sidebar" id="sidebar">
+          <h2>Competency Questions</h2>
+          <div class="competency-questions">
+            <!-- 1. General Project Information -->
+            <div class="question-category">
+              <h3><i class="fas fa-info-circle"></i> General Project Information</h3>
+              <div class="question">
+                <p>What is the title of the capstone project?</p>
+              </div>
+              <div class="question">
+                <p>Which university and department is it associated with?</p>
+              </div>
+              <div class="question">
+                <p>What is the visibility status of the project?</p>
+              </div>
+              <div class="question">
+                <p>What domain does the project belong to?</p>
+              </div>
+              <div class="question">
+                <p>What is the architecture followed by the project?</p>
+              </div>
+              <div class="question">
+                <p>What is the current status of a given project?</p>
+              </div>
+            </div>
+            
+            <!-- 2. Team Composition & Roles -->
+            <div class="question-category">
+              <h3><i class="fas fa-users"></i> Team Composition & Roles</h3>
+              <div class="question">
+                <p>Who are the members of the capstone team?</p>
+              </div>
+              <div class="question">
+                <p>What roles (e.g., Developer, Tester, Supervisor) does each person play?</p>
+              </div>
+              <div class="question">
+                <p>Who is the team leader?</p>
+              </div>
+              <div class="question">
+                <p>What team is associated with a given capstone project?</p>
+              </div>
+              <div class="question">
+                <p>What team does a contributor belong to?</p>
+              </div>
+            </div>
+            
+            <!-- 3. Project Lifecycle / Phases -->
+            <div class="question-category">
+              <h3><i class="fas fa-tasks"></i> Project Lifecycle / Phases</h3>
+              <div class="question">
+                <p>What are the phases of the project?</p>
+              </div>
+              <div class="question">
+                <p>What deliverables were produced in each phase?</p>
+              </div>
+              <div class="question">
+                <p>What documents or outputs were generated in a particular phase?</p>
+              </div>
+              <div class="question">
+                <p>What is the start and end date of a specific phase?</p>
+              </div>
+              <div class="question">
+                <p>What are the prerequisites of a given project phase?</p>
+              </div>
+              <div class="question">
+                <p>What is the completion percentage of a phase?</p>
+              </div>
+              <div class="question">
+                <p>What are the planned start and end dates for a phase?</p>
+              </div>
+            </div>
+            
+            <!-- 4. Requirements Engineering -->
+            <div class="question-category">
+              <h3><i class="fas fa-clipboard-list"></i> Requirements Engineering</h3>
+              <div class="question">
+                <p>What requirements are included in the Software Requirements section?</p>
+              </div>
+              <div class="question">
+                <p>What type of requirement is X (e.g., functional, non-functional)?</p>
+              </div>
+              <div class="question">
+                <p>What non-functional requirements were specified (e.g., security, usability)?</p>
+              </div>
+            </div>
+            
+            <!-- 5. Documentation & Content -->
+            <div class="question-category">
+              <h3><i class="fas fa-file-alt"></i> Documentation & Content</h3>
+              <div class="question">
+                <p>What documents are part of the capstone project?</p>
+              </div>
+              <div class="question">
+                <p>What content sections are included in a specific document?</p>
+              </div>
+              <div class="question">
+                <p>Which section contains the conclusion, future work, or glossary?</p>
+              </div>
+              <div class="question">
+                <p>What is the submission date and version of a document?</p>
+              </div>
+              <div class="question">
+                <p>What kind of paragraphs should a section contain?</p>
+              </div>
+              <div class="question">
+                <p>What artifact types should a use case section contain?</p>
+              </div>
+            </div>
+            
+            <!-- 6. Technical Stack -->
+            <div class="question-category">
+              <h3><i class="fas fa-code"></i> Technical Stack</h3>
+              <div class="question">
+                <p>What programming languages are used?</p>
+              </div>
+              <div class="question">
+                <p>What backend system or database does the project use?</p>
+              </div>
+              <div class="question">
+                <p>What architecture is implemented?</p>
+              </div>
+              <div class="question">
+                <p>Which APIs are used in the project?</p>
+              </div>
+              <div class="question">
+                <p>What frameworks and tools were used?</p>
+              </div>
+              <div class="question">
+                <p>Was any dataset or ontology reused?</p>
+              </div>
+            </div>
+            
+            <!-- 7. Evaluation & Feedback -->
+            <div class="question-category">
+              <h3><i class="fas fa-star"></i> Evaluation & Feedback</h3>
+              <div class="question">
+                <p>Who evaluated the capstone project?</p>
+              </div>
+              <div class="question">
+                <p>What was the grading scheme used?</p>
+              </div>
+              <div class="question">
+                <p>What is the score of each evaluation phase?</p>
+              </div>
+              <div class="question">
+                <p>What feedback was given, and by whom?</p>
+              </div>
+              <div class="question">
+                <p>What evaluations are associated with a project?</p>
+              </div>
+            </div>
+            
+            <!-- 8. Meetings & Communication -->
+            <div class="question-category">
+              <h3><i class="fas fa-comments"></i> Meetings & Communication</h3>
+              <div class="question">
+                <p>Which meetings were held with the capstone team?</p>
+              </div>
+              <div class="question">
+                <p>Which stakeholder held a meeting with the team?</p>
+              </div>
+              <div class="question">
+                <p>Who held a meeting with a stakeholder or team?</p>
+              </div>
+            </div>
+            
+            <!-- 9. User & Stakeholder Types -->
+            <div class="question-category">
+              <h3><i class="fas fa-user-friends"></i> User & Stakeholder Types</h3>
+              <div class="question">
+                <p>Who are the end users, primary users, and secondary users?</p>
+              </div>
+              <div class="question">
+                <p>What are the roles of individual stakeholders?</p>
+              </div>
+              <div class="question">
+                <p>What are the different types of stakeholders involved in a project?</p>
+              </div>
+            </div>
+            
+            <!-- 10. Ontology/Knowledge Reuse -->
+            <div class="question-category">
+              <h3><i class="fas fa-sync"></i> Ontology/Knowledge Reuse</h3>
+              <div class="question">
+                <p>Does the project reuse any ontology or dataset?</p>
+              </div>
+              <div class="question">
+                <p>Which ontology was reused in this capstone?</p>
+              </div>
+            </div>
+            
+            <!-- 11. Tool Usage & Version Control -->
+            <div class="question-category">
+              <h3><i class="fas fa-tools"></i> Tool Usage & Version Control</h3>
+              <div class="question">
+                <p>What tools were used during the capstone project?</p>
+              </div>
+              <div class="question">
+                <p>Was version control (e.g., Git) used?</p>
+              </div>
+              <div class="question">
+                <p>What version of a document was submitted?</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info-section">
+            <h3>About This Ontology</h3>
+            <p>This ontology provides a formal representation of capstone project concepts, relationships, and constraints to facilitate project planning, execution, and evaluation.</p>
+            <p>The viewer displays the complete ontology structure including classes, properties, and instances that form the knowledge base.</p>
+          </div>
+        </div>
+        
+        <div class="view-section">
+          <iframe 
+            src="http://150.146.207.114/lode/extract?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamzain%2FFYP_Process%2Frefs%2Fheads%2Fmain%2FCapstoneProject%2520Ontology.rdf&lang=en"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      document.getElementById('toggleSidebar').addEventListener('click', function() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+        
+        const buttonText = sidebar.classList.contains('active') ? 
+          '<i class="fas fa-times"></i> Hide Menu' : 
+          '<i class="fas fa-bars"></i> Show Menu';
+        
+        this.innerHTML = buttonText;
+      });
+    </script>
+  </body>
+</html>
