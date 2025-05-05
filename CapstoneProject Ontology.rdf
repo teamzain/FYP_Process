@@ -1,0 +1,1566 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject/"
+     xml:base="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:CapstoneProject="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject">
+        <rdfs:comment>This ontology describes key aspects of a capstone project, including general information, team roles, supervision, documentation, project phases, technical details, testing, outcomes, academic context, presentations, tools, and legal/ethical considerations. It aims to provide a structured representation for querying and reasoning about capstone projects.</rdfs:comment>
+        <rdfs:label>Capstone Process Ontology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#associatedWithDepartment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#associatedWithDepartment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Department"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#associatedWithUniversity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#associatedWithUniversity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#University"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#evaluatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#evaluatedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Evaluator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#explainsParagraphType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#explainsParagraphType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Paragraph"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ParagraphType"/>
+        <rdfs:comment>Links a paragraph (sample text)  to the paragraph type it belongs to e.g scope, purpose, overview, references etc.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#followsArchitecture -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#followsArchitecture">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Architecture"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#givenBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#givenBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Feedback"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Supervisor"/>
+        <rdfs:comment>Indicates the person who provided a comment, feedback, or evaluation.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasDocument -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasDocument">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasDomain -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasDomain">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Domain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasEvaluation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasEvaluation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Evaluation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasFeedback -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasFeedback">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Feedback"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasGradingScheme -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasGradingScheme">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#GradingScheme"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasMeeting -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasMeeting">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneTeam"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Meeting"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasMember">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneTeam"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasOutput">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentArtifact"/>
+        <rdfs:comment>Used to define what a process or project phase produces i,e deliverables like srs document, uiwireframes etc.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasPhase -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasPhase">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Evaluation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#EvaluationPhase"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasPrerequisitePhase -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasPrerequisitePhase">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+        <rdfs:comment>Sequence logic (e.g., Impl → Design)</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasRequirement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasRequirement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SpecificRequirementsSection"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Requirement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasRole">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Contributor"/>
+        <rdfs:comment>Associates a person with their role in the project or team e.g supervisor, developer, designer etc.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasSection -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasSection">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasStatus -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasStatus">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasTeam -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasTeam">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneTeam"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasVisibilityType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasVisibilityType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectVisibility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#heldMeetingWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#heldMeetingWith">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Stakeholder"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneTeam"/>
+        <rdfs:comment>Represents meetings held between stakeholders or team members.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#isLeaderOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#isLeaderOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneTeam"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#isSectionOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#isSectionOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+        <rdfs:comment>Indicates a content section is part of a larger document.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#reusesDataset -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#reusesDataset">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Dataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#reusesOntology -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#reusesOntology">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Ontology"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#roleForTeam -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#roleForTeam">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Contributor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneTeam"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#roleInProject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#roleInProject">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Contributor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:comment>Specifies the role played by a stakeholder or user within the project lifecycle.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#shouldContainArtifactOfType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#shouldContainArtifactOfType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#UseCaseSection"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentArtifact"/>
+        <rdfs:comment>Indicates expected artifact types in a document or phase.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#shouldContainParagraphOfType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#shouldContainParagraphOfType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ParagraphType"/>
+        <rdfs:comment>Defines the kinds of paragraph types expected in a document section. e.g Introduction section in an srs document would contain purpose, scope, Definitions, Acronyms, Abbreviations, References, Overview etc.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesAPI -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesAPI">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#API"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesBackendSystem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesBackendSystem">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#BackendSystem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesDatabase -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesDatabase">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Database"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesFramework -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesFramework">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Framework"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesProgrammingLanguage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesProgrammingLanguage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProgrammingLanguage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesTool -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesTool">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Tool"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesVersionControl -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesVersionControl">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#VersionControlSystem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#apiPurpose -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#apiPurpose">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#API"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#completionPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#completionPercentage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>A numeric percentage representing progress or completion of a phase.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#gradingCriteria -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#gradingCriteria">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#GradingScheme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasComment -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasComment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Evaluation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasEmail -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasEmail">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasEndDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasEndDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasPhoneNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasPhoneNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasSampleText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasSampleText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Paragraph"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Example or illustrative text used in a paragraph or document. e.g sample text for the scope paragraph in an srs document introduction section</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasScore">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Evaluation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasStartDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasStartDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasTitle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#submissionDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#submissionDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#toolPurpose -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#toolPurpose">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Tool"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#version -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#version">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Version number or identifier of a document or artifact.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#versionControlLink -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#versionControlLink">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#visibilityNote -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#visibilityNote">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#API -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#API">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Technology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#AccessibilityRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#AccessibilityRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#NonFunctionalRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#AppendicesSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#AppendicesSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Architecture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Architecture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Technology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#AvailabilityRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#AvailabilityRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#NonFunctionalRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#BackendSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#BackendSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Technology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#BusinessAnalyst -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#BusinessAnalyst">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Contributor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#associatedWithDepartment"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Department"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#associatedWithUniversity"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#University"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesDatabase"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Database"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesFramework"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Framework"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#usesTool"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Tool"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasDocument"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasEvaluation"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Evaluation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasTeam"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneTeam"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneTeam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneTeam">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasMember"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Person"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ChallengesFacedSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ChallengesFacedSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ClientOrganization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ClientOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#OrganizationalStakeholder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Communication_Interface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Communication_Interface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ExternalInterfaceRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CompatibilityRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CompatibilityRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#NonFunctionalRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ConclusionSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ConclusionSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Contributor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Contributor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#roleInProject"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneProject"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#IndividualStakeholder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Database -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Database">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Technology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Dataset -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Dataset">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Technology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Department -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Department"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DesignOverviewSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DesignOverviewSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Developer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Developer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Contributor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentArtifact -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentArtifact"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Domain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Domain"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#EndUser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#EndUser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Evaluation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Evaluation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#EvaluationPhase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#EvaluationPhase"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Evaluator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Evaluator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Contributor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ExternalInterfaceRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ExternalInterfaceRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Requirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Feedback -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Feedback"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Framework -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Framework">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Technology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#FunctionalRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#FunctionalRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Requirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#FutureWorkSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#FutureWorkSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#GlossarySection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#GlossarySection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#GradingScheme -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#GradingScheme"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Hardware_Interface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Hardware_Interface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ExternalInterfaceRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#IndividualClient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#IndividualClient">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#IndividualStakeholder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#IndividualStakeholder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#IndividualStakeholder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Stakeholder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#InstallationInstructionsSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#InstallationInstructionsSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#IntroductionSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#IntroductionSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#LocalizationRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#LocalizationRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#NonFunctionalRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#MaintainabilityRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#MaintainabilityRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#NonFunctionalRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Meeting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Meeting"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#NonFunctionalRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#NonFunctionalRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Requirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Ontology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Ontology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Technology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#OrganizationalStakeholder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#OrganizationalStakeholder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Stakeholder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#OverallDescriptionSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#OverallDescriptionSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Paragraph -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Paragraph"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ParagraphType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ParagraphType"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#PerformanceRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#PerformanceRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#NonFunctionalRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Person">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#hasRole"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Contributor"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#isLeaderOf"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#CapstoneTeam"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#PortabilityRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#PortabilityRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#NonFunctionalRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#PrimaryUser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#PrimaryUser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProgrammingLanguage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProgrammingLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Technology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectManager -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectManager">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Contributor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectStatus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectStatus"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectVisibility -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectVisibility"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ReferencesSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ReferencesSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ReliabilityRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ReliabilityRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#NonFunctionalRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Requirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Requirement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#RequirementEngineer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#RequirementEngineer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Contributor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ScalabilityRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ScalabilityRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#NonFunctionalRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SecondaryUser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SecondaryUser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SecurityRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SecurityRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#NonFunctionalRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Software_Interface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Software_Interface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ExternalInterfaceRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SpecificRequirementsSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SpecificRequirementsSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Stakeholder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Stakeholder"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Supervisor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Supervisor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Contributor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Technology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Technology"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Tester -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Tester">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Contributor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#TestingStrategySection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#TestingStrategySection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Tool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Tool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Technology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#University -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#University"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#UsabilityRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#UsabilityRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#NonFunctionalRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#UseCaseSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#UseCaseSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ContentSection"/>
+        <rdfs:comment>Contains use cases (diagrams and models) demonstrating specific system functionalities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#User">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#IndividualStakeholder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#User_Interface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#User_Interface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ExternalInterfaceRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#VersionControlSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#VersionControlSystem"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#AssumptionsAndDependencies -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#AssumptionsAndDependencies">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ParagraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#BugReport -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#BugReport">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ClosurePhase -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ClosurePhase">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ComponentDiagram -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ComponentDiagram">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentArtifact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DefinitionsAcronymsAbbreviations -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DefinitionsAcronymsAbbreviations">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ParagraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DemoVideo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DemoVideo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentArtifact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DeploymentDiagram -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DeploymentDiagram">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentArtifact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DeploymentPackage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DeploymentPackage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentArtifact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DesignPhase -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DesignPhase">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentOverview -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentOverview">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ParagraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#EvaluationForms -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#EvaluationForms">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#FeasibilityAnalysisReport -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#FeasibilityAnalysisReport">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#FinalReportDocument -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#FinalReportDocument">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#FinalReportPhase -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#FinalReportPhase">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#GeneralConstraints -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#GeneralConstraints">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ParagraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ImplementationPhase -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ImplementationPhase">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#InitialIdeaDoc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#InitialIdeaDoc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#InitiationPhase -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#InitiationPhase">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#PresentationPhase -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#PresentationPhase">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#PresentationSlides -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#PresentationSlides">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentArtifact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProblemStatementDoc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProblemStatementDoc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProductFunctions -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProductFunctions">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ParagraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProductPerspective -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProductPerspective">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ParagraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectClosureSummary -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectClosureSummary">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProposalDocument -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProposalDocument">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProposalPhase -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProposalPhase">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Purpose -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Purpose">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ParagraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#References -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#References">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ParagraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SRSDocument -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SRSDocument">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SRSPhase -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SRSPhase">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Scope -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Scope">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ParagraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ScopeSample -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ScopeSample">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Paragraph"/>
+        <CapstoneProject:explainsParagraphType rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Scope"/>
+        <CapstoneProject:hasSampleText>This system aims to help users plan their capstone timeline...</CapstoneProject:hasSampleText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SourceCodeRepository -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SourceCodeRepository">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentArtifact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SystemArchitectureDocument -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#SystemArchitectureDocument">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentArtifact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#TestPlan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#TestPlan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#TestResultsDocument -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#TestResultsDocument">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#Document"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#TestingPhase -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#TestingPhase">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ProjectPhase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#UIWireframes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#UIWireframes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentArtifact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#UseCaseDiagram -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#UseCaseDiagram">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentArtifact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#UseCaseModel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#UseCaseModel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#DocumentArtifact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#UserCharacteristics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#UserCharacteristics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2025/3/CapstoneProject#ParagraphType"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
