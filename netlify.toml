@@ -1,1 +1,4 @@
-
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self' http://150.146.207.114; frame-src http://150.146.207.114; connect-src http://150.146.207.114;"
